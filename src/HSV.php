@@ -30,6 +30,11 @@ class HSV extends Color
     $this->value = $v;
   }
 
+
+  public function convertToRGB(){
+    echo("Convertido a RGB");
+  }
+
   public function getHue() :float
   {
     return $this->hue;

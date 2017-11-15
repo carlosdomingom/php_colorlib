@@ -30,6 +30,10 @@ class RGB extends Color
     $this->blue = $b;
   }
 
+  public function convertToHSV(){
+    echo("Convertido a HSV");
+  }
+
   public function getRed() :int
   {
     return $this->red;
