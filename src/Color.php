@@ -10,30 +10,33 @@
   abstract class Color implements ColorInterface
   {
 
-    function __construct()
-    {
-      # code...
-    }
-
+    /**
+    * Call the convert to HSV function depending on the color
+    *
+    */
     public function convertToHSV(){
       if (get_class($this) == "ColorLib\HSV") return;
       $this->_convertToHSV();
     }
 
+    /**
+    * Call the convert to RGB function depending on the color
+    *
+    */
     public function convertToRGB(){
       if (get_class($this) == "ColorLib\RGB") return;
       $this->_convertToRGB();
     }
 
     /**
-    * Devuelve una cadena de texto de 7 caracteres (incluida la almohadilla) con el color en formato hexadecimal
-    *
+    * Returns a string indicating the hexadecimal color for the object
+    * @return String
     */
     public function getHexaColorString(){
       $converted = $this->convertToRGB();
-      $hexared = (strlen(dechex($converted->red))==1)?"0".dechex($converted->red):dechex($converted->red);
-      $hexagreen = (strlen(dechex($converted->green))==1)?"0".dechex($converted->green):dechex($converted->green);
-      $hexablue = (strlen(dechex($converted->blue))==1)?"0".dechex($converted->blue):dechex($converted->blue);
+      $hexared = (strlen(dechex($converted->getRed()))==1)?"0".dechex($converted->getRed()):dechex($converted->getRed());
+      $hexagreen = (strlen(dechex($converted->getGreen()))==1)?"0".dechex($converted->getGreen()):dechex($converted->getGreen());
+      $hexablue = (strlen(dechex($converted->getBlue()))==1)?"0".dechex($converted->getBlue()):dechex($converted->getBlue());
       $hexacode = $hexared.$hexagreen.$hexablue;
       return('#'.$hexacode);
     }
