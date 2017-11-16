@@ -31,7 +31,29 @@ class RGB extends Color
   }
 
   public function convertToHSV(){
-    echo("Convertido a HSV");
+    $maxRGB = max($this->red, $this->green, $this->blue) / 255;
+    $minRGB = min($this->red, $this->green, $this->blue) / 255;
+    $computedV = $maxRGB;
+    $computedS = ($maxRGB==0)?0:(1-$minRGB/$maxRGB);
+    if($maxRGB == $minRGB)
+      $computedH=0;
+    else{
+      if(($maxRGB == $this->red / 255) && ($this->green / 255 >= $this->blue  / 255))
+        $computedH = 60 * ($this->green / 255 - $this->blue / 255) / ($maxRGB - $minRGB) + 0;
+      else{
+        if(($maxRGB == $this->red /255) && ($this->green / 255 < $this->blue / 255))
+          $computedH = 60 * ($this->green / 255 - $this->blue / 255) / ($maxRGB - $minRGB) + 360;
+        else{
+          if($maxRGB == $this->green / 255)
+            $computedH = 60 * ($this->blue / 255 - $this->red / 255) / ($maxRGB - $minRGB) + 120;
+          else{
+            if($maxRGB == $this->blue / 255)
+              $computedH = 60 * ($this->red / 255 - $this->green / 255) / ($maxRGB - $minRGB) + 240;
+          }
+        }
+      }
+    }
+    return new HSV($computedH, $computedS, $computedV);
   }
 
   public function getRed() :int
