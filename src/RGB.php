@@ -17,7 +17,7 @@ class RGB extends Color
   function __construct($r = 0, $g = 0, $b = 0)
   {
     // Check if parameters are int values
-    if(!is_int($r) || !is_int($g) || !is_int($b )){
+    if(!is_int($r) || !is_int($g) || !is_int($b)){
       throw new \Exception('Values must be integer');
     }
 

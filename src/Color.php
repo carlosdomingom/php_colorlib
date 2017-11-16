@@ -24,6 +24,19 @@
       if (get_class($this) == "ColorLib\RGB") return;
       $this->_convertToRGB();
     }
+
+    /**
+    * Devuelve una cadena de texto de 7 caracteres (incluida la almohadilla) con el color en formato hexadecimal
+    *
+    */
+    public function getHexaColorString(){
+      $converted = $this->convertToRGB();
+      $hexared = (strlen(dechex($converted->red))==1)?"0".dechex($converted->red):dechex($converted->red);
+      $hexagreen = (strlen(dechex($converted->green))==1)?"0".dechex($converted->green):dechex($converted->green);
+      $hexablue = (strlen(dechex($converted->blue))==1)?"0".dechex($converted->blue):dechex($converted->blue);
+      $hexacode = $hexared.$hexagreen.$hexablue;
+      return('#'.$hexacode);
+    }
   }
 
 ?>
