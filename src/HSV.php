@@ -32,7 +32,34 @@ class HSV extends Color
 
 
   public function convertToRGB(){
-    echo("Convertido a RGB");
+    $computedChroma = $this->getValue() * $this->getSaturation();
+    $computedHAux = $this->getHue() / 60.0;
+    $computedHTemp = $computedHAux;
+    while($computedHTemp >= 2.0) $computedHTemp-=2.0;
+    $computedX = $computedChroma * (1 - abs($computedHTemp-1));
+    $computedM = $this->getValue() - $computedChroma;
+    switch(floor($computedHAux)) {
+        case 0:
+            $red1 = $computedChroma; $green1 = $computedX; $blue1 = 0.0; break;
+        case 1:
+            $red1 = $computedX; $green1 = $computedChroma; $blue1 = 0.0; break;
+        case 2:
+            $red1 = 0.0; $green1 = $computedChroma; $blue1 = $computedX; break;
+        case 3:
+            $red1 = 0.0; $green1 = $computedX; $blue1 = $computedChroma; break;
+        case 4:
+            $red1 = $computedX; $green1 = 0.0; $blue1 = $computedChroma; break;
+        case 5:
+            $red1 = $computedChroma; $green1 = 0.0; $blue1 = $computedX; break;
+        default:
+            $red1 = 0.0; $green1 = 0.0; $blue1 = 0.0; break;
+    }
+
+    $red = (int)round(($red1 + $computedM) * 255, 0);
+    $green = (int)round(($green1 + $computedM) * 255, 0);
+    $blue = (int)round(($blue1 + $computedM) * 255, 0);
+
+    return new RGB($red, $green, $blue);
   }
 
   public function getHue() :float
