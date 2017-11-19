@@ -69,3 +69,7 @@ It will return a 12 position array with these colors:
 ![#ff5d00](https://placehold.it/15/ff5d00/000000?text=+)
 ![#ff2e00](https://placehold.it/15/ff2e00/000000?text=+)
 ![#ff0000](https://placehold.it/15/ff0000/000000?text=+)
+
+Here is a sample of diferent level gradients:
+
+![alt text](https://github.com/carlosdomingom/php_colorlib/blob/master/assets/img/gradient_samples.jpeg "Gradient Samples")
