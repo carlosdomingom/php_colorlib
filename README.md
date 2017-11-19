@@ -1,6 +1,19 @@
 # php_colorlib
 A simple PHP library for converting colors and create color gradients
 
+![#00ff00](https://placehold.it/15/00ff00/000000?text=+)
+![#2eff00](https://placehold.it/15/2eff00/000000?text=+)
+![#5dff00](https://placehold.it/15/5dff00/000000?text=+)
+![#8bff00](https://placehold.it/15/8bff00/000000?text=+)
+![#b9ff00](https://placehold.it/15/b9ff00/000000?text=+)
+![#e8ff00](https://placehold.it/15/e8ff00/000000?text=+)
+![#ffe800](https://placehold.it/15/ffe800/000000?text=+)
+![#ffb900](https://placehold.it/15/ffb900/000000?text=+)
+![#ff8b00](https://placehold.it/15/ff8b00/000000?text=+)
+![#ff5d00](https://placehold.it/15/ff5d00/000000?text=+)
+![#ff2e00](https://placehold.it/15/ff2e00/000000?text=+)
+![#ff0000](https://placehold.it/15/ff0000/000000?text=+)
+
 ## Current version
 
 This release allows to convert colors between RGB an HSV color modes. It also allows to create color gradients between two given colors and a number of steps between them.
@@ -72,4 +85,4 @@ It will return a 12 position array with these colors:
 
 Here is a sample of diferent level gradients:
 
-![alt text](https://github.com/carlosdomingom/php_colorlib/blob/master/assets/img/gradient_samples.jpeg "Gradient Samples")
+![Gradient sample](https://github.com/carlosdomingom/php_colorlib/blob/master/assets/img/gradient_samples.jpeg "Gradient Samples")
