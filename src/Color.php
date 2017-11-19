@@ -15,7 +15,7 @@
     *
     */
     public function convertToHSV(){
-      if (get_class($this) == "ColorLib\HSV") return;
+      if (get_class($this) == "ColorLib\HSV") return $this;
       $this->_convertToHSV();
     }
 
@@ -24,7 +24,7 @@
     *
     */
     public function convertToRGB(){
-      if (get_class($this) == "ColorLib\RGB") return;
+      if (get_class($this) == "ColorLib\RGB") return $this;
       $this->_convertToRGB();
     }
 
