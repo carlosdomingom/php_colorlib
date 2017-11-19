@@ -59,8 +59,10 @@
         // Increase or decrease depending on the vector direction
         if($this->startColor->getHue() < $this->finishColor->getHue()){
           $newH = $this->startColor->getHue() + ($stepHue * $i);
+          $newH = ($newH > 360)?360:$newH;
         }else{
           $newH = $this->startColor->getHue() - ($stepHue * $i);
+          $newH = ($newH < 0)?0:$newH;
         }
         $newS = ($this->startColor->getSaturation() >= $this->finishColor->getSaturation())?$this->startColor->getSaturation() - ($stepSaturation*$i):$this->startColor->getSaturation() + ($stepSaturation*$i);
         $newV = ($this->startColor->getValue() >= $this->finishColor->getValue() )?$this->startColor->getValue() - ($stepValue*$i):$this->startColor->getValue() + ($stepValue*$i);
