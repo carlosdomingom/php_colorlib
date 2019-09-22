@@ -1,5 +1,5 @@
 # php_colorlib
-A simple PHP library for converting colors and create color gradients
+A simple PHP library for converting colors and create color gradients.
 
 ![#00ff00](https://placehold.it/15/00ff00/000000?text=+)
 ![#2eff00](https://placehold.it/15/2eff00/000000?text=+)
